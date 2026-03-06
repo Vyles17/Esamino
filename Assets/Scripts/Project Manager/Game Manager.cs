@@ -9,6 +9,8 @@ public enum GameStatus
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     [SerializeField] public KeyCode TastoPausa;
     private bool Pausizzato = false;
 
@@ -45,25 +47,35 @@ public class GameManager : MonoBehaviour
         if (Pausizzato)
         {
             SetGameStatus(GameStatus.InPausa);
-            UIManager.Instance.MenuPausa.SetActive(true);
+            UIManager.Instance.menuPausa.SetActive(true);
         }
 
         else
         {
             SetGameStatus(GameStatus.InGioco);
-            UIManager.Instance.MenuPausa.SetActive(false);
+            UIManager.Instance.menuPausa.SetActive(false);
         }
     }
 
     public void GameOver()
     {
         SetGameStatus(GameStatus.InPausa);
-        UIManager.Instance.MenuGameOver.SetActive(true);
+        UIManager.Instance.menuGameOver.SetActive(true);
     }
     public void Vincita()
     {
         SetGameStatus(GameStatus.InPausa);
-        UIManager.Instance.MenuVincita.SetActive(true);
+        UIManager.Instance.menuVincita.SetActive(true);
+    }
+
+    public void NuovaPartita()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void AlMenuPrincipale()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void RicaricaLivello()
