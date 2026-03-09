@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8506722814430037821, guid: 94e1ca608ddb09a4590dfd70bf503984, type: 3}
+      propertyPath: costoUpgrade
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8506722814430037821, guid: 94e1ca608ddb09a4590dfd70bf503984, type: 3}
+      propertyPath: costoTorretta
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8506722814430037821, guid: 94e1ca608ddb09a4590dfd70bf503984, type: 3}
+      propertyPath: danniProiettili
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8506722814430037821, guid: 94e1ca608ddb09a4590dfd70bf503984, type: 3}
+      propertyPath: "velocit\xE0Proiettili"
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 320382002902653949, guid: 94e1ca608ddb09a4590dfd70bf503984, type: 3}
       propertyPath: m_Name
       value: Torretta 3

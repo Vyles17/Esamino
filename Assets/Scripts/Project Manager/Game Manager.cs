@@ -14,6 +14,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] public KeyCode TastoPausa;
     private bool Pausizzato = false;
 
+    public void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+    }
+
     public void Start()
     {
         SetGameStatus(GameStatus.InGioco);
@@ -26,7 +36,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SetGameStatus(GameStatus status)
+    public void SetGameStatus(GameStatus status)
     {
         switch (status)
         {

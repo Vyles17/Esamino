@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ public class UIManager : MonoBehaviour
 
     //La UI in game
     [SerializeField] public Image vitaTorre;
-
+    [SerializeField] public TMP_Text dimDollaroniTMP;
 
     private void Awake()
     {
@@ -28,9 +29,6 @@ public class UIManager : MonoBehaviour
         menuPausa.SetActive(false);
         menuGameOver.SetActive(false);
         menuVincita.SetActive(false);
-
-        //e riempiamo la "barra della vita" della torre
-        vitaTorre.fillAmount = 1;
     }
 
 }

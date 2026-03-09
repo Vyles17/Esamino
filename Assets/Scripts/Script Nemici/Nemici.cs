@@ -1,18 +1,31 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 public class Nemici : MonoBehaviour, IDanneggiabili
 {
-    //assegniamo la vita, la velocità e la quantità di danni inferti
+    //assegniamo la vita, la velocità, la quantità di danni inferti e i DimDolalroni che ti fanno gaudagnare
     private Rigidbody2D nemicoRB;
 
-    [SerializeField] public int vita;
+    [SerializeField] public int vitaMax;
+    public int vitaCorrente;
     [SerializeField] public float velocità;
     [SerializeField] public int danniInferti;
+    [SerializeField] public int dimDollaroni;
+
+    DimDollaroniManager ddm;
+
+    public static event Action OnNemiciUccisi;
 
     //settiamo il rigidBody Nemico
     private void Awake()
     {
         nemicoRB = GetComponent<Rigidbody2D>();
+    }
+
+    public void Start()
+    {
+        //All'inizio del gioco, la vita è al massimo
+        vitaCorrente = vitaMax;
     }
 
     public void FixedUpdate()
@@ -42,15 +55,23 @@ public class Nemici : MonoBehaviour, IDanneggiabili
             //e muoiono dopo aver fatto la loro mossa kamikaze
             Destroy(gameObject);
         }
-
     }
 
     public void SeDanneggiato(int danni)
     {
         //come la torre, anche i nemici prendono danni, se muoiono vengono distrutti
-        vita -= danni;
+        vitaMax -= danni;
 
-        if (vita < 0)
+        if (vitaMax < 0)
+        {
+            //invochiamo l'azione 
+            OnNemiciUccisi?.Invoke();
+
+            //aggiorniamo il portafoglio
+            ddm.Arricchimento(dimDollaroni);
+
+            //addio
             Destroy(gameObject);
+        }
     }
 }

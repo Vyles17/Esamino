@@ -17,7 +17,6 @@ public class Torre : MonoBehaviour, IDanneggiabili
     {
         //prende il danno dei nemici
         vitaCorrente -= danno;
-
         UIManager.Instance.vitaTorre.fillAmount = vitaCorrente / vitaMax;
 
         //se la vita scende a 0, finsice il gioco
