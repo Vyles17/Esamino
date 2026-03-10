@@ -107,10 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TorrettaDebole
   costoTorretta: 10
-  danniProiettili: 3
-  areaProiettili: 1
-  "velocit\xE0Proiettili": 1
   costoUpgrade: 10
+  prefabProiettile: {fileID: 7430614906358094984, guid: 10df4bed88435f445b4c54a63ba09e3e, type: 3}
+  rateoProiettili: 1
 --- !u!114 &7124849951907253380
 MonoBehaviour:
   m_ObjectHideFlags: 0

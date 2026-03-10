@@ -22,19 +22,17 @@ public class TorrettaSpawner : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+
         //se il costo della torretta è minore del portafoglio disponibile..
         if (torrettePrefab.costoTorretta <= DimDollaroniManager.Instance.portafoglio)
         {
-            //si scalano i soldi dal portafoglio
-            int dimDollaroni = torrettePrefab.costoTorretta;
-            DimDollaroniManager.Instance.Spesa(dimDollaroni);
-
             //si mette in pausa il flusso del gioco
             GameManager.Instance.SetGameStatus(GameStatus.InPausa);
 
             // e si picka il prefab (ora sta allo script SpaziTorrette!)
             torrettaSelezionata = torrettePrefab;
         }
+
     }
 
 }

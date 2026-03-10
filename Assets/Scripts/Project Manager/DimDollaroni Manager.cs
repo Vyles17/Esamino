@@ -21,20 +21,20 @@ public class DimDollaroniManager : MonoBehaviour
     {
         //setto all'inizio che siamo poveri
         portafoglio = 100;
-        UIManager.Instance.dimDollaroniTMP.text = portafoglio.ToString();
+        UIManager.Instance.UpdatePortafoglio(portafoglio);
     }
 
     public void Arricchimento(int dimDollaroni)
     {
         //se ci arricchiamo, aggiorno portafoglio e UI
         portafoglio += dimDollaroni;
-        UIManager.Instance.dimDollaroniTMP.text = portafoglio.ToString();
+        UIManager.Instance.UpdatePortafoglio(portafoglio);
     }
 
     public void Spesa(int dimDollaroni)
     {
         //idem se diventiamo poveri
         portafoglio -= dimDollaroni;
-        UIManager.Instance.dimDollaroniTMP.text = portafoglio.ToString();
+        UIManager.Instance.UpdatePortafoglio(portafoglio);
     }
 }

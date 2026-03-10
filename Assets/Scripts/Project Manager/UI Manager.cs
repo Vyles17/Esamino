@@ -37,4 +37,32 @@ public class UIManager : MonoBehaviour
         menuVincita.SetActive(false);
     }
 
+    //i vari metodi per far comparire i menu in scena:
+    public void PausaUI()
+    {
+        //il menu di pausa si attiva solo se non ci sono gli altri menu attivi
+        if (!menuVincita.activeSelf && !menuGameOver.activeSelf)
+        {
+            if (!menuPausa.activeSelf)
+                menuPausa.SetActive(true);
+
+            else if (menuPausa.activeSelf)
+                menuPausa.SetActive(false);
+        }
+    }
+    public void VincitaUI()
+    {
+        menuVincita.SetActive(true);
+    }
+    public void GameOverUI()
+    {
+        menuGameOver.SetActive(true);
+    }
+
+    //aggiornare la UI del portafoglio
+    public void UpdatePortafoglio(int portafoglio)
+    {
+        dimDollaroniTMP.text = portafoglio.ToString();
+    }
+
 }

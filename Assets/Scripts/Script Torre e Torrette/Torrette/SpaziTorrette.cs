@@ -33,6 +33,10 @@ public class SpaziTorrette : MonoBehaviour, IPointerClickHandler
             //ora la devo rendere null così non la assegno in altre postazioni
             TorrettaSpawner.torrettaSelezionata = null;
 
+            //si scalano i soldi dal portafoglio
+            int dimDollaroni = torretta.costoTorretta;
+            DimDollaroniManager.Instance.Spesa(dimDollaroni);
+
             //resumiamo il gioco
             GameManager.Instance.SetGameStatus(GameStatus.InGioco);
         }

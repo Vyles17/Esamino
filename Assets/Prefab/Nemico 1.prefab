@@ -126,7 +126,7 @@ MonoBehaviour:
   vitaCorrente: 10
   "velocit\xE0": 2
   danniInferti: 3
-  dimDollaroni: 20
+  dimDollaroni: 10
 --- !u!114 &2526016153800818608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,10 +309,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 6390334434858952599, guid: 5969ab725eac61f41a52705864bdbd7e, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

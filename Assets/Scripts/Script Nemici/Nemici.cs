@@ -3,18 +3,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 public class Nemici : MonoBehaviour, IDanneggiabili
 {
-    //assegniamo la vita, la velocità, la quantità di danni inferti e i DimDolalroni che ti fanno gaudagnare
     private Rigidbody2D nemicoRB;
 
+    //assegniamo la vita, la velocità, la quantità di danni inferti e i DimDolalroni che ti fanno gaudagnare
     [SerializeField] public int vitaMax;
-    public int vitaCorrente;
+    public float vitaCorrente;
     [SerializeField] public float velocità;
     [SerializeField] public int danniInferti;
     [SerializeField] public int dimDollaroni;
 
     public static event Action OnNemiciUccisi;
 
-    //settiamo il rigidBody Nemico
+    //gettiamo il rigidBody Nemico
     private void Awake()
     {
         nemicoRB = GetComponent<Rigidbody2D>();
@@ -43,7 +43,7 @@ public class Nemici : MonoBehaviour, IDanneggiabili
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        //getto l'interfaccia dei Danneggiabili (poi su unity escludo chi ha il layer "Nemici") per colpire la torre
+        //getto l'interfaccia dei Danneggiabili per colpire la torre
         IDanneggiabili target = other.GetComponent<IDanneggiabili>();
 
         if (target != null)

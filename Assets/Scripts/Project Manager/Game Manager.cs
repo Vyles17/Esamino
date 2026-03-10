@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     //pulsante per pausizzre e il suo bool di stato
-    [SerializeField] public KeyCode TastoPausa;
+    [SerializeField] KeyCode TastoPausa;
     private bool Pausizzato = false;
 
     //contatore dei nemici uccisi (servono per le win condition/per printarlo a schermo quando facciamo game Over)
@@ -95,13 +95,13 @@ public class GameManager : MonoBehaviour
         if (Pausizzato)
         {
             SetGameStatus(GameStatus.InPausa);
-            UIManager.Instance.menuPausa.SetActive(true);
+            UIManager.Instance.PausaUI();
         }
 
         else
         {
             SetGameStatus(GameStatus.InGioco);
-            UIManager.Instance.menuPausa.SetActive(false);
+            UIManager.Instance.PausaUI();
         }
     }
 
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
     {
         //se muore la torre, è game over e si attiva la sua UI
         SetGameStatus(GameStatus.InPausa);
-        UIManager.Instance.menuGameOver.SetActive(true);
+        UIManager.Instance.GameOverUI();
 
         //con il contatore dei nemici uccisi per lo score raggiunto
         UIManager.Instance.nemiciUccisiGO.text = "(Non demordere, hai comunque ucciso " + nemiciUccisi.ToString() + " nemici!)";
@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         //Se vinciamo, si attiva la UI (quando uccidiamo un tot di nemici)
         SetGameStatus(GameStatus.InPausa);
-        UIManager.Instance.menuVincita.SetActive(true);
+        UIManager.Instance.VincitaUI();
 
         //con il contatore dei nemici uccisi per lo score raggiunto
         UIManager.Instance.nemiciUccisiWin.text = "(Brav*! Hai ucciso " + nemiciDaUccidere.ToString() + " nemici!)";
