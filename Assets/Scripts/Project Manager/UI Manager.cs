@@ -12,6 +12,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject menuGameOver;
     [SerializeField] public GameObject menuVincita;
 
+    //il testo in game per contare i nemici rimasti da uccidere
+    [SerializeField] public TMP_Text nemiciRimasti;
+    //e il testo del contatore nemici per il menu di GameOver/di vincita
+    [SerializeField] public TMP_Text nemiciUccisiGO;
+    [SerializeField] public TMP_Text nemiciUccisiWin;
+
     //La UI in game
     [SerializeField] public Image vitaTorre;
     [SerializeField] public TMP_Text dimDollaroniTMP;

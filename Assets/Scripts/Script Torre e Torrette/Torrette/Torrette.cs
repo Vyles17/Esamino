@@ -7,7 +7,7 @@ public abstract class Torrette : MonoBehaviour
     [SerializeField] private int danniProiettili = 3;
     [SerializeField] private float areaProiettili = 1f;
     [SerializeField] private int velocitàProiettili = 1;
-    [SerializeField] private int costoUpgrade =10;
+    [SerializeField] public int costoUpgrade =10;
 
     private float timer;
 

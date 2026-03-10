@@ -12,8 +12,6 @@ public class Nemici : MonoBehaviour, IDanneggiabili
     [SerializeField] public int danniInferti;
     [SerializeField] public int dimDollaroni;
 
-    DimDollaroniManager ddm;
-
     public static event Action OnNemiciUccisi;
 
     //settiamo il rigidBody Nemico
@@ -60,15 +58,15 @@ public class Nemici : MonoBehaviour, IDanneggiabili
     public void SeDanneggiato(int danni)
     {
         //come la torre, anche i nemici prendono danni, se muoiono vengono distrutti
-        vitaMax -= danni;
+        vitaCorrente -= danni;
 
-        if (vitaMax < 0)
+        if (vitaCorrente < 0)
         {
             //invochiamo l'azione 
             OnNemiciUccisi?.Invoke();
 
             //aggiorniamo il portafoglio
-            ddm.Arricchimento(dimDollaroni);
+            DimDollaroniManager.Instance.Arricchimento(dimDollaroni);
 
             //addio
             Destroy(gameObject);

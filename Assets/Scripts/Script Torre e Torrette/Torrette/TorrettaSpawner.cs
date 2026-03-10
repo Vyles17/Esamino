@@ -14,7 +14,7 @@ public class TorrettaSpawner : MonoBehaviour, IPointerClickHandler
     public void FixedUpdate()
     {
         //se il costo della torretta è troppo alto, non si può selezionare
-        if (torrettePrefab.costoTorretta >= DimDollaroniManager.Instance.portafoglio)
+        if (torrettePrefab.costoTorretta > DimDollaroniManager.Instance.portafoglio)
         {
             bottoneTorretta.color = Color.gray7;
         }
