@@ -3,15 +3,14 @@ using UnityEngine;
 public class Proiettili : MonoBehaviour
 {
     //statistiche per i proiettili
-    [SerializeField] private int danniProiettili = 3;
-    [SerializeField] private float areaProiettili = 1f;
+    [SerializeField] private int danniProiettili;
     [SerializeField] private float velocitàProiettili = 5f;
 
     Rigidbody2D rb;
 
     private void Start()
     {
-        //all'inizio ci gettiamo il rigid body del proiettile
+        //all'inizio ci gettiamo il rigid body e il collider del proiettile
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -45,6 +44,13 @@ public class Proiettili : MonoBehaviour
 
         // sennò addio anche ai proiettili quando vanno a sbattere nel muro invisibile
         Destroy(gameObject);
+    }
+
+    //funz per settare la stat Danni dei proiettili nello script della sua specifica torretta
+    public int DanniProiettili
+    {
+        get { return danniProiettili; }
+        set { danniProiettili = value; }
     }
 
 }

@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 238971857}
   - component: {fileID: 238971858}
   - component: {fileID: 238971859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torretta Spazio 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 245604565}
   - component: {fileID: 245604566}
   - component: {fileID: 245604567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torretta Spazio 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TorrettaSpawner
   bottoneTorretta: {fileID: 471692731}
-  torrettePrefab: {fileID: 4948637224530909912, guid: 336d24836ea77154d9b3ed00b9945065, type: 3}
+  torrettePrefab: {fileID: -3799649450673584362, guid: cb788484cf4e6f04881bbe5be4e50966, type: 3}
 --- !u!1 &495504821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,7 +1793,7 @@ GameObject:
   - component: {fileID: 495504822}
   - component: {fileID: 495504823}
   - component: {fileID: 495504824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torretta Spazio 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2213,7 +2213,7 @@ GameObject:
   - component: {fileID: 551346048}
   - component: {fileID: 551346049}
   - component: {fileID: 551346050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torretta Spazio 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2487,7 +2487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TorrettaSpawner
   bottoneTorretta: {fileID: 562162189}
-  torrettePrefab: {fileID: 4948637224530909912, guid: 21b3166aab0a110449bc4078c9e3be22, type: 3}
+  torrettePrefab: {fileID: 7120852860325988442, guid: ec434b070d3904c48bafc87ad55990b1, type: 3}
 --- !u!1 &563644747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,9 +2970,9 @@ MonoBehaviour:
   menuPausa: {fileID: 776161851}
   menuGameOver: {fileID: 1652864765}
   menuVincita: {fileID: 850730999}
-  nemiciRimasti: {fileID: 1418347067}
-  nemiciUccisiGO: {fileID: 292505544}
-  nemiciUccisiWin: {fileID: 901682903}
+  nemiciRimastiTMP: {fileID: 1418347067}
+  nemiciUccisiGOTMP: {fileID: 292505544}
+  nemiciUccisiWinTMP: {fileID: 901682903}
   vitaTorre: {fileID: 350798942}
   dimDollaroniTMP: {fileID: 563644748}
 --- !u!1 &713063655
@@ -3249,7 +3249,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   TastoPausa: 27
   nemiciUccisi: 0
-  nemiciDaUccidere: 5
+  nemiciDaUccidere: 50
+  nemiciRimasti: 0
 --- !u!1 &771937713
 GameObject:
   m_ObjectHideFlags: 0
@@ -4299,7 +4300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TorrettaSpawner
   bottoneTorretta: {fileID: 1090275958}
-  torrettePrefab: {fileID: -8506722814430037821, guid: 94e1ca608ddb09a4590dfd70bf503984, type: 3}
+  torrettePrefab: {fileID: -5372742896935896937, guid: 94e1ca608ddb09a4590dfd70bf503984, type: 3}
 --- !u!1 &1207394121
 GameObject:
   m_ObjectHideFlags: 0
@@ -5485,7 +5486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd0d5e1e0efc294fb79a4ea85a2305f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Torre
-  vitaMax: 50
+  vitaMax: 250
 --- !u!61 &1448857430
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6046,7 +6047,7 @@ GameObject:
   - component: {fileID: 1542047377}
   - component: {fileID: 1542047378}
   - component: {fileID: 1542047379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torretta Spazio 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7373,7 +7374,7 @@ GameObject:
   - component: {fileID: 2045027342}
   - component: {fileID: 2045027343}
   - component: {fileID: 2045027344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torretta Spazio 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

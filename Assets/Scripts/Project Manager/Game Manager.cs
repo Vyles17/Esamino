@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     //contatore dei nemici uccisi (servono per le win condition/per printarlo a schermo quando facciamo game Over)
     public int nemiciUccisi = 0;
     public int nemiciDaUccidere = 5;
+    public int nemiciRimasti;
 
     //richiamiamo l'evento OnNemiciUccisi per aggiornare il contatore
     private void OnEnable()
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
     {
         //quando parte il livello, si è subito in modalità gioco
         SetGameStatus(GameStatus.InGioco);
+
+        //setto all'inizio il goal di nemici
+        nemiciRimasti = nemiciDaUccidere;
+        UIManager.Instance.UpdateNemiciRimasti(nemiciRimasti);
     }
     public void Update()
     {
@@ -72,12 +77,13 @@ public class GameManager : MonoBehaviour
 
     private void UpdateNemiciUccisi()
     {
+
         //aggiorniamo il contatore delle uccisioni
         nemiciUccisi++;
+        nemiciRimasti = nemiciDaUccidere - nemiciUccisi;
 
         //e aggiorniamo il contatore UI
-        int nemiciRimasti = nemiciDaUccidere - nemiciUccisi;
-        UIManager.Instance.nemiciRimasti.text = "Nemici rimasti da uccidere: " + nemiciRimasti.ToString();
+        UIManager.Instance.UpdateNemiciRimasti(nemiciRimasti);
 
         //se abbiamo ucciso un tot di nemici, abbiamo vinto!
         if (nemiciRimasti == 0)
@@ -112,7 +118,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.GameOverUI();
 
         //con il contatore dei nemici uccisi per lo score raggiunto
-        UIManager.Instance.nemiciUccisiGO.text = "(Non demordere, hai comunque ucciso " + nemiciUccisi.ToString() + " nemici!)";
+        UIManager.Instance.nemiciUccisiGOTMP.text = "(Non demordere, hai comunque ucciso " + nemiciUccisi.ToString() + " nemici!)";
     }
 
     public void Vincita()
@@ -122,7 +128,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.VincitaUI();
 
         //con il contatore dei nemici uccisi per lo score raggiunto
-        UIManager.Instance.nemiciUccisiWin.text = "(Brav*! Hai ucciso " + nemiciDaUccidere.ToString() + " nemici!)";
+        UIManager.Instance.nemiciUccisiWinTMP.text = "(Brav*! Hai ucciso " + nemiciDaUccidere.ToString() + " nemici!)";
 
     }
 

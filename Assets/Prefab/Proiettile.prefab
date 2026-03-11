@@ -169,6 +169,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daea728394692cc43ab6ca171b0f4100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Proiettili
-  danniProiettili: 3
-  areaProiettili: 1
+  danniProiettili: 1
   "velocit\xE0Proiettili": 5

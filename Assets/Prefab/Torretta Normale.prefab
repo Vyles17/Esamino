@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3595708307575688807}
   - component: {fileID: 5764701924248207429}
-  - component: {fileID: -8506722814430037821}
   - component: {fileID: 7124849951907253380}
+  - component: {fileID: -5372742896935896937}
   m_Layer: 0
-  m_Name: Torretta 1
+  m_Name: Torretta Normale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,22 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &-8506722814430037821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320382002902653949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a450bdfdc154ab54b8b77f10b3898da8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TorrettaDebole
-  costoTorretta: 10
-  costoUpgrade: 10
-  prefabProiettile: {fileID: 7430614906358094984, guid: 10df4bed88435f445b4c54a63ba09e3e, type: 3}
-  rateoProiettili: 1
 --- !u!114 &7124849951907253380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +107,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TorretteUI
   costoUpgrade: {fileID: 5398404449041072259}
-  torretta: {fileID: -8506722814430037821}
+  torretta: {fileID: -5372742896935896937}
+--- !u!114 &-5372742896935896937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320382002902653949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a450bdfdc154ab54b8b77f10b3898da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TorrettaNormale
+  costoTorretta: 10
+  costoUpgrade: 10
+  prefabProiettile: {fileID: 7430614906358094984, guid: 10df4bed88435f445b4c54a63ba09e3e, type: 3}
+  rateoProiettili: 1.5
+  danniProiettili: 2
+  "\xE8Upgradeabile": 1
 --- !u!1 &8103769617307463455
 GameObject:
   m_ObjectHideFlags: 0

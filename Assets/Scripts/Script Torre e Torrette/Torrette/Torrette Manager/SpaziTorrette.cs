@@ -9,11 +9,12 @@ public class SpaziTorrette : MonoBehaviour, IPointerClickHandler
     //mi serve sapere se la base è già occupata
     private bool èOccupata = false;
 
+    //quando clicco sulla base..
     public void OnPointerClick(PointerEventData eventData)
-    { 
+    {
         //se la base è già occupata, non la puoi selezionare
         if (èOccupata)
-             return;
+            return;
 
         Torrette torretta = TorrettaSpawner.torrettaSelezionata;
 
@@ -21,7 +22,7 @@ public class SpaziTorrette : MonoBehaviour, IPointerClickHandler
         if (torretta != null)
         {
             //la mettiamo sulla base libera
-            transform.rotation = new Quaternion (0, 0 , 180  , 0);
+            transform.rotation = new Quaternion(0, 0, 180, 0);
             Instantiate(torretta, transform.position, transform.rotation, transform);
 
             //coloriamo la base
@@ -29,6 +30,9 @@ public class SpaziTorrette : MonoBehaviour, IPointerClickHandler
 
             //la assegniamo
             èOccupata = true;
+
+            //le aggiungiamo il componente TorretteUpgrade
+            gameObject.AddComponent<TorretteUpgrade>();
 
             //ora la devo rendere null così non la assegno in altre postazioni
             TorrettaSpawner.torrettaSelezionata = null;
@@ -40,6 +44,6 @@ public class SpaziTorrette : MonoBehaviour, IPointerClickHandler
             //resumiamo il gioco
             GameManager.Instance.SetGameStatus(GameStatus.InGioco);
         }
-        
+
     }
 }

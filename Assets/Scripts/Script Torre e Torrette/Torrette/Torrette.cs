@@ -3,19 +3,23 @@ using UnityEngine;
 public abstract class Torrette : MonoBehaviour
 {
     //script madre per le torrette
+
+    //condividono tutte gli stessi parametri di base
     [SerializeField] public int costoTorretta;
     [SerializeField] public int costoUpgrade;
     [SerializeField] GameObject prefabProiettile;
-    [SerializeField] public int rateoProiettili;
+    [SerializeField] public float rateoProiettili;
+    [SerializeField] public int danniProiettili;
+    public bool èUpgradeabile = true;
 
     private float timer;
-
 
     private void Start()
     {
         //all'inizio il timer è 0
         timer = 0;
     }
+ 
 
     private void FixedUpdate()
     {
@@ -30,11 +34,32 @@ public abstract class Torrette : MonoBehaviour
         //se il timer raggiunge il rateo, spara
         if (timer >= rateoProiettili)
         {
-            //crea un proiettile
-            Instantiate(prefabProiettile, transform.position, transform.rotation, transform);
+            //creo un proiettile
+            GameObject nuovoProiettile = Instantiate(prefabProiettile, transform.position, transform.rotation, transform);
 
-            //resetta il timer
+            ModificaProiettile(nuovoProiettile);
+
+            //resetto il timer
             timer = 0;
         }
+    }
+
+    //funz vuota per modificare poi il proiettile in base al tipo di torretta
+    protected virtual void ModificaProiettile(GameObject proiettile)
+    {
+        
+    }
+
+    //funz vuota per modificare poi l'upgrade in base al tipo di torretta
+    public virtual void UpgradeTorretta()
+    {
+
+    }
+
+    //funz per settare la statistica "costo dell'upgrade" nello script dell'Upgrade
+    public int CostoTorretta
+    {
+        get { return costoTorretta; }
+        set { costoTorretta = value; }
     }
 }

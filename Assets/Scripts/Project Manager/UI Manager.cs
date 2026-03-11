@@ -13,10 +13,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject menuVincita;
 
     //il testo in game per contare i nemici rimasti da uccidere
-    [SerializeField] public TMP_Text nemiciRimasti;
+    [SerializeField] public TMP_Text nemiciRimastiTMP;
     //e il testo del contatore nemici per il menu di GameOver/di vincita
-    [SerializeField] public TMP_Text nemiciUccisiGO;
-    [SerializeField] public TMP_Text nemiciUccisiWin;
+    [SerializeField] public TMP_Text nemiciUccisiGOTMP;
+    [SerializeField] public TMP_Text nemiciUccisiWinTMP;
 
     //La UI in game
     [SerializeField] public Image vitaTorre;
@@ -65,4 +65,9 @@ public class UIManager : MonoBehaviour
         dimDollaroniTMP.text = portafoglio.ToString();
     }
 
+    //aggiornare la UI dei nemici rimasti da uccidere
+    public void UpdateNemiciRimasti(int nemici)
+    {
+        nemiciRimastiTMP.text = "nemici rimasti da uccidere: " + nemici.ToString();
+    }
 }

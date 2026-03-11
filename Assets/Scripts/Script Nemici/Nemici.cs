@@ -60,7 +60,7 @@ public class Nemici : MonoBehaviour, IDanneggiabili
         //come la torre, anche i nemici prendono danni, se muoiono vengono distrutti
         vitaCorrente -= danni;
 
-        if (vitaCorrente < 0)
+        if (vitaCorrente <= 0)
         {
             //invochiamo l'azione 
             OnNemiciUccisi?.Invoke();
